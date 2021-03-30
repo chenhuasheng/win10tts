@@ -112,6 +112,24 @@ namespace win10tts
         //    // 释放资源  
         //    ss.Dispose();
         //}
+        public class MySpeak
+        {
+            private enum SpeechStyles
+            {
+                styleNotSet = 0x000000,
+                styleStrong = 0x000001,
+                styleLoud = 0x000002,
+                styleQuick = 0x000004,
+                styleSlowly = 0x000008,
+            }
+
+            public MySpeak()
+            {
+
+            }
+
+            void AddParagraph
+        }
         static void Main(string[] args)
         {
             //List<VoiceInfo> lst = getVoiceInfos();
@@ -131,7 +149,6 @@ namespace win10tts
                 }
             }
             //Console.ReadKey();
-
             PromptStyle style = new PromptStyle();
             style.Emphasis = PromptEmphasis.NotSet;
             style.Rate = PromptRate.NotSet;
