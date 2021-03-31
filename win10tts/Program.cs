@@ -14,121 +14,6 @@ namespace win10tts
     class Program
     {
         
-        ///// <summary>
-        ///// 派生自 PromptBuilder，用于简单建构我们需要的特殊类
-        ///// </summary>
-        //public class VoiceBuilder : PromptBuilder
-        //{
-        //    /// <summary>
-        //    /// 建构
-        //    /// </summary>
-        //    /// <param name="voiceName">语音库名称，比如 "Microsoft Lili ..."</param>
-        //    public VoiceBuilder(string voiceName)
-        //    {
-        //        base.StartVoice(voiceName);
-        //    }
-        //    public VoiceBuilder(VoiceInfo info)
-        //    {
-        //        base.StartVoice(info);
-        //    }
-        //    public new void EndVoice()
-        //    {
-        //        base.EndVoice();
-        //    }
-        //    /// <summary>
-        //    /// 让添加的发音文本形式恢复到系统默认状态，即不强调、不快不慢、音量遵循系统设置。
-        //    /// </summary>
-        //    /// <param name="textToSpeak">要添加的发音文本</param>
-        //    public void Add_Text(string textToSpeak)
-        //    {
-        //        Add_NotSet_Text(textToSpeak);
-        //    }
-        //    /// <summary>
-        //    /// 让添加的发音文本形式恢复到系统默认状态，即不强调、不快不慢、音量遵循系统设置。
-        //    /// </summary>
-        //    /// <param name="textToSpeak">要添加的发音文本</param>
-        //    public void Add_NotSet_Text(string textToSpeak)
-        //    {
-        //        base.StartStyle(Get_NotSet_PromptStyle());
-        //        base.AppendText(textToSpeak);
-        //        base.EndStyle();
-        //    }
-        //    /// <summary>
-        //    /// 让添加的发音文本语音音量变大，并且有着重、强调的语气
-        //    /// </summary>
-        //    /// <param name="textToSpeak">要添加的，起强调并大声些的文本</param>
-        //    public void Add_StrongLoud_Text(string textToSpeak)
-        //    {
-        //        base.StartStyle(Get_StrongLoud_PromptStyle());
-        //        base.AppendText(textToSpeak);
-        //        base.EndStyle();
-        //    }
-        //    /// <summary>
-        //    /// 让添加的发音文本语速快些
-        //    /// </summary>
-        //    /// <param name="textToSpeak">要添加的，语速要快些的文本</param>
-        //    public void Add_Fast_Text(string textToSpeak)
-        //    {
-        //        base.StartStyle(Get_Fast_PromptStyle());
-        //        base.AppendText(textToSpeak);
-        //        base.EndStyle();
-        //    }
-        //    /// <summary>
-        //    /// 让添加的发音文本语速慢些
-        //    /// </summary>
-        //    /// <param name="textToSpeak">要添加的，语速要慢些的文本</param>
-        //    public void Add_Slow_Text(string textToSpeak)
-        //    {
-        //        base.StartStyle(Get_Slow_PromptStyle());
-        //        base.AppendText(textToSpeak);
-        //        base.EndStyle();
-        //    }
-        //    /// <summary>
-        //    /// 将数序列作为电话号码进行朗读。 例如，把“(306) 555-1212”读作“Area code three zero six five five five one two one two”。
-        //    ///  注意：添加的文本 的 语速 发音音量 以及 强调语气 都遵循系统设置
-        //    /// </summary>
-        //    /// <param name="textToSpeak">要读取的文本内容</param>
-        //    public void Add_As_PhoneNumber_Text(string textToSpeak)
-        //    {
-        //        base.StartStyle(Get_NotSet_PromptStyle());
-        //        base.AppendTextWithHint(textToSpeak,System.Speech.Synthesis.SayAs.Telephone);
-        //        base.EndStyle();
-        //    }
-        //    /// <summary>
-        //    /// 将数序列作为日期进行朗读。 例如，把“05/19/2004”或“19.5.2004”读作为“may nineteenth two thousand four”。
-        //    ///  注意：添加的文本 的 语速 发音音量 以及 强调语气 都遵循系统设置
-        //    /// </summary>
-        //    /// <param name="textToSpeak">要读取的文本内容</param>
-        //    public void Add_As_Date_Text(string textToSpeak)
-        //    {
-        //        base.StartStyle(Get_NotSet_PromptStyle());
-        //        base.AppendTextWithHint(textToSpeak, System.Speech.Synthesis.SayAs.Date);
-        //        base.EndStyle();
-        //    }
-        //    /// <summary>
-        //    /// 将要添加的文本当作时间来读取。例如 把“9:45”读作“nine forty-five”，并把“9:45 am”读作“nine forty-five A M”。
-        //    ///  注意：添加的文本 的 语速 发音音量 以及 强调语气 都遵循系统设置
-        //    /// </summary>
-        //    /// <param name="textToSpeak">要读取的文本内容</param>
-        //    public void Add_As_Time_Text(string textToSpeak)
-        //    {
-        //        base.StartStyle(Get_NotSet_PromptStyle());
-        //        base.AppendTextWithHint(textToSpeak, System.Speech.Synthesis.SayAs.Time);
-        //        base.EndStyle();
-        //    }
-        //    /// <summary>
-        //    /// 将要添加的文本当作拼读读取，例如 "clock" 读作 "C L O C K"
-        //    ///  注意：添加的文本 的 语速 发音音量 以及 强调语气 都遵循系统设置
-        //    /// </summary>
-        //    /// <param name="textToSpeak">要读取的文本内容</param>
-        //    public void Add_As_SpellOut_Text(string textToSpeak)
-        //    {
-        //        base.StartStyle(Get_NotSet_PromptStyle());
-        //        base.AppendTextWithHint(textToSpeak, System.Speech.Synthesis.SayAs.SpellOut);
-        //        base.EndStyle();
-        //    }
-        //}
-
         public static void Add_As_Normal_Text(ref PromptBuilder builder, string textToAdd)
         {
             builder.AppendText(textToAdd);
@@ -238,6 +123,36 @@ namespace win10tts
         {
             builder.AppendTextWithHint(textToAdd, System.Speech.Synthesis.SayAs.Time24);
         }
+
+        public static void Add_wav(ref PromptBuilder builder, string filePath)
+        {
+            builder.AppendAudio(filePath);
+        }
+        public static bool Add_mp3(ref PromptBuilder builder, string filePath)
+        {
+            return true;
+        }
+        public static bool Add_wma(ref PromptBuilder builder, string filePath)
+        {
+            return true;
+        }
+        public static bool Add_aac(ref PromptBuilder builder, string filePath)
+        {
+            return true;
+        }
+        public static void Add_Audio(ref PromptBuilder builder, string audioFilePath)
+        {
+            builder.AppendAudio(audioFilePath);
+        }
+        public static void Add_Audio(ref PromptBuilder builder, Uri audioFile)
+        {
+            builder.AppendAudio(audioFile);
+        }
+        public static void Add_Audio(ref PromptBuilder builder, Uri audioFile, string alternateText)
+        {
+            builder.AppendAudio(audioFile, alternateText);
+        }
+
 
         // Write each word and its character position to the console.  
         static void synth_SpeakProgress(object sender, SpeakProgressEventArgs e)
